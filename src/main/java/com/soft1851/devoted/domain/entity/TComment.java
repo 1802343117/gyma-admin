@@ -21,6 +21,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class TComment {
 
+    private Integer tbId;
+
     private Integer userId;
 
 

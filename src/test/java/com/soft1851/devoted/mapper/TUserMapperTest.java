@@ -66,19 +66,8 @@ class TUserMapperTest {
         tUserMapper.updateUser(tUser);
     }
 
-
     @Test
     void userLogin() {
         System.out.println(tUserMapper.userLogin("111"));
-    }
-
-    @Test
-    void findByAccount() {
-        System.out.println(tUserMapper.findByAccount("111"));
-    }
-
-    @Test
-    void findUserById() {
-        System.out.println(tUserMapper.findUserById("1"));
     }
 }

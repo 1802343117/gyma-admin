@@ -32,9 +32,9 @@ public interface TCommentService {
     /**
      * 根据ID删除
      *
-     * @param userId
+     * @param tbId
      */
-    void deleteById(Integer userId);
+    void deleteById(Integer tbId);
 
     /**
      * 添加留言

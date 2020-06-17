@@ -18,7 +18,7 @@ import java.util.List;
  * @since 2020-06-09
  */
 @RestController
-@RequestMapping("/tComment")
+@RequestMapping("/api/comment")
 @Slf4j
 public class TCommentController {
 
@@ -49,11 +49,11 @@ public class TCommentController {
     /**
      * 根据ID删除留言
      *
-     * @param userId
+     * @param tbId
      */
     @DeleteMapping("/delete")
-    void delete(@Param("userId") Integer userId) {
-        tCommentService.deleteById(userId);
+    void delete(@Param("userId") Integer tbId) {
+        tCommentService.deleteById(tbId);
     }
 
     /**

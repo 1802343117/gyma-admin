@@ -12,7 +12,7 @@ import java.util.List;
  * @author 12559
  */
 @RestController
-@RequestMapping("/tLabel")
+@RequestMapping("/api/label")
 @Slf4j
 public class TLabelController {
 

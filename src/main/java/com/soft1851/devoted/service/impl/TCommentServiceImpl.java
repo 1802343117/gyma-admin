@@ -34,14 +34,17 @@ public class TCommentServiceImpl implements TCommentService {
     }
 
     @Override
-    public void deleteById(Integer userId) {
-        tCommentMapper.deleteById(userId);
+    public void deleteById(Integer tbId) {
+        tCommentMapper.deleteById(tbId);
     }
 
     @Override
     public void addComment(TComment tComment) {
         LocalDateTime dateTime = LocalDateTime.now();
+
+        tComment.setGmtCreate(dateTime);
         tComment.setGmtModified(dateTime);
+
         tCommentMapper.addComment(tComment);
     }
 

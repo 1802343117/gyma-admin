@@ -38,10 +38,10 @@ public interface TCommentMapper {
     /**
      * 根据ID删除
      *
-     * @param userId
+     * @param tbId
      */
-    @Delete("DELETE FROM t_comment WHERE user_id=#{userId}")
-    void deleteById(Integer userId);
+    @Delete("DELETE FROM t_comment WHERE tb_id=#{tbId}")
+    void deleteById(Integer tbId);
 
     /**
      * 添加留言
@@ -52,7 +52,7 @@ public interface TCommentMapper {
     /**
      * 根据ID修改留言
      */
-    @Update("UPDATE t_comment SET content=#{content}, delete_flag=#{deleteFlag}, gmt_modified=#{gmtModified} WHERE user_id=#{userId}")
+    @Update("UPDATE t_comment SET content=#{content}, delete_flag=#{deleteFlag}, gmt_modified=#{gmtModified} WHERE tb_id=#{tbId}")
     void updateComment(TComment tComment);
 
 }

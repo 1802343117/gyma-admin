@@ -17,7 +17,7 @@ import javax.annotation.Resource;
  * @since 2020-06-09
  */
 @RestController
-@RequestMapping("/tUser")
+@RequestMapping("/api/user")
 public class TUserController {
     @Resource
     private TUserServiceImpl tUserServiceImpl;
