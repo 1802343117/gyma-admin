@@ -3,6 +3,7 @@ package com.soft1851.devoted.controller;
 import com.soft1851.devoted.domain.entity.TLabel;
 import com.soft1851.devoted.service.TLabelService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -35,7 +36,7 @@ public class TLabelController {
      * @param tbId
      */
     @DeleteMapping("/deleteById")
-    void delete(Integer tbId) {
+    void delete(@Param("tbId") Integer tbId) {
         tLabelService.deleteById(tbId);
     }
 
@@ -45,7 +46,7 @@ public class TLabelController {
      * @param tLabel
      */
     @PostMapping("/addLabel")
-    void addLabel(TLabel tLabel) {
+    void addLabel(@RequestBody TLabel tLabel) {
         tLabelService.addLabel(tLabel);
     }
 
@@ -55,7 +56,7 @@ public class TLabelController {
      * @param tLabel
      */
     @PutMapping("/updateById")
-    void updateLabel(TLabel tLabel) {
+    void updateLabel(@RequestBody TLabel tLabel) {
         tLabelService.updateById(tLabel);
     }
 }

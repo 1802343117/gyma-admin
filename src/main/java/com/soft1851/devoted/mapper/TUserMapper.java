@@ -41,8 +41,8 @@ public interface TUserMapper {
      *
      * @param tUser
      */
-    @Insert("INSERT INTO t_user(user_id,account,avatar,delete_flag,gmt_create," +
-            "gmt_modified,password,role_id,salt,status,user_gender,user_name,user_path,user_phone)VALUES(#{userId}," +
+    @Insert("INSERT INTO t_user(account, avatar, delete_flag, gmt_create," +
+            "gmt_modified, password, role_id, salt, status, user_gender, user_name, user_path, user_phone)VALUES(" +
             "#{account},#{avatar},#{deleteFlag},#{gmtCreate},#{gmtModified},#{password},#{roleId},#{salt},#{status},#{userGender}," +
             "#{userName},#{userPath},#{userPhone})")
     void addUser(TUser tUser);
@@ -68,7 +68,43 @@ public interface TUserMapper {
 
     @Select("SELECT * FROM t_user WHERE account=#{account}")
     LoginDto findByAccount(@Param("account") String account);
+
     @Select("SELECT * FROM t_user WHERE user_id=#{userId}")
     LoginDto findUserById(@Param("userId") String userId);
+
+    /**
+     * 通过用户ID查看用户信息
+     * @param userId
+     * @return
+     */
+    @Select("SELECT * FROM t_user WHERE user_id=#{userId}")
+    TUser selectById(@Param("userId") int userId);
+
+    /**
+     * 修改用户状态信息
+     * status 接入状态
+     * @param tUser
+     */
+    @Update("UPDATE t_user SET status=#{status} WHERE user_id=#{userId}")
+    void updateUserPath(TUser tUser);
+
+    /**
+     * 固定查询
+     * 查看用户表中
+     * 角色为：服务人员
+     * 用户状态为：空闲
+     * 登录情况不为：null
+     * @return TUser
+     */
+    @Select("SELECT * FROM t_user WHERE role_id = 2 && user_path != 'null' && status = TRUE")
+    List<TUser> selectRsu();
+
+    /**
+     * 修改用户状态信息
+     * status 接入状态
+     * @param tUser
+     */
+    @Update("UPDATE t_user SET status=#{status} WHERE user_path=#{userPath}")
+    void updateStatus(TUser tUser);
 
 }

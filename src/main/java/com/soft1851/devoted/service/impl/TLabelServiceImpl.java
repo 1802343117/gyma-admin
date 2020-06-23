@@ -31,6 +31,7 @@ public class TLabelServiceImpl implements TLabelService {
     @Override
     public void addLabel(TLabel tLabel) {
         LocalDateTime dateTime = LocalDateTime.now();
+        tLabel.setGmtCreate(dateTime);
         tLabel.setGmtModified(dateTime);
         tLabelMapper.addLabel(tLabel);
     }

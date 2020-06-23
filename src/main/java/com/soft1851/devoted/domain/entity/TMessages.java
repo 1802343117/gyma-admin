@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 /**
  * <p>
@@ -36,14 +37,14 @@ public class TMessages {
     private String mContent;
 
 
-    private Integer mFromUserid;
+    private String mFromUserid;
 
 
-    private Boolean mStatus;
+    private String userPath;
 
-    private LocalDateTime mTime;
+    private Map<String, Integer> mTime;
 
-    private Integer mToUserid;
+    private String mToUserid;
 
 
 }

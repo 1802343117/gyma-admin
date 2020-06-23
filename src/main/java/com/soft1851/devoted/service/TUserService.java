@@ -30,4 +30,10 @@ public interface TUserService {
 
     void updateUser(TUser tUser);
 
+    /**
+     * 根据ID查询用户信息
+     * @param userId
+     * @return
+     */
+    TUser selectById(Integer userId);
 }

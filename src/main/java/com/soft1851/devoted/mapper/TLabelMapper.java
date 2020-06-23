@@ -28,7 +28,7 @@ public interface TLabelMapper {
     /**
      * 添加留言
      */
-    @Insert("INSERT INTO t_label(tb_id, label_content, delete_flag, gmt_create, gmt_modified)VALUES(#{tbId},#{labelContent},#{deleteFlag},#{gmtCreate},#{gmtModified})")
+    @Insert("INSERT INTO t_label (label_content, delete_flag, gmt_create, gmt_modified) VALUES (#{labelContent}, #{deleteFlag}, #{gmtCreate}, #{gmtModified})")
     void addLabel(TLabel tLabel);
 
     /**

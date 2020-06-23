@@ -1,4 +1,4 @@
-//package com.soft1851.devoted.controller;
+//package com.soft1851.devoted.service;
 //
 //import com.soft1851.devoted.domain.dto.LoginDto;
 //import org.junit.jupiter.api.Test;
@@ -6,17 +6,20 @@
 //
 //import javax.annotation.Resource;
 //
+//import static org.junit.jupiter.api.Assertions.*;
+//
 //@SpringBootTest
-//class LoginControllerTest {
+//class TUserServiceTest {
 //
 //    @Resource
-//    private LoginController loginController;
+//    private TUserService tUserService;
 //
 //    @Test
-//    void login() {
+//    void userLogin() {
 //        LoginDto loginDto = new LoginDto();
 //        loginDto.setAccount("111");
 //        loginDto.setPassword("123456");
-//        System.out.println(loginController.login(loginDto));
+//        loginDto.setUserPath("0");
+//        tUserService.userLogin(loginDto);
 //    }
 //}
